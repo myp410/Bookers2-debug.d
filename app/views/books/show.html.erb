@@ -10,9 +10,10 @@
   		<h2>Book detail</h2>
   		<table class='table'>
   		  <tr>
-          <td><%= link_to(@book.user) do %>
-            <%= image_tag @book.user.get_profile_image, size:"100x100" %><br>
-            <%= @book.user.name %>
+          <td>
+            <%= link_to(@book.user) do %>
+              <%= image_tag @book.user.get_profile_image, size:"100x100" %><br>
+              <%= @book.user.name %>
             <% end %>
           </td>
           <td><%= link_to @book.title, @book %></td>
@@ -30,10 +31,9 @@
           <% @book.book_comments.each do |book_comment| %>
           <tr>
             <td>
-              <%= image_tag book_comment.user.get_profile_image, size:"100x100" %>
-              <br>
-              <%= link_to(@book.user) do %>
-                <%= book_comment.user.name %>
+              <%= link_to(@book.user) do %>
+                <%= image_tag book_comment.user.get_profile_image, size:"100x100" %><br>
+                <%= book_comment.user.name %>
               <% end %>
             </td>
             <td><%= book_comment.comment %></td>
